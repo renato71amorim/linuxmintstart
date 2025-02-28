@@ -107,3 +107,5 @@ apt update -y
 apt upgrade -y
 apt install -y --fix-broken
 apt autoremove --purge -y
+
+notify-send "Atualização do Sistema Concluída" "O sistema foi atualizado, dedique um tempo para ver as mensagens do terminal para verificar se ocorrer algum erro."
