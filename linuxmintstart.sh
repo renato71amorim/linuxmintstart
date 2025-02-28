@@ -30,7 +30,7 @@ language-pack-gnome-pt language-pack-pt libavcodec-extra libjpeg-dev libnotify-b
 libreoffice-help-pt-br libreoffice-l10n-pt-br libreoffice-style-colibre libssl-dev numlockx p7zip-full \
 python3-dev python3-smbc rar sassc screen software-properties-common ubuntu-restricted-extras ukui-greeter \
 unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
-wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina discord twinkle
+wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite
 
 # Remover pacotes desnecessários
 apt remove --purge -y hexchat hypnotix orca rhythmbox warpinator
@@ -46,18 +46,21 @@ wget https://clockify.me/downloads/Clockify_Setup_x64.deb -O clockify.deb
 wget https://vscode.download.prss.microsoft.com/dbazure/download/stable/e54c774e0add60467559eb0d1e229c6452cf8447/code_1.97.2-1739406807_amd64.deb -O vscode.deb
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.25.0-amd64.deb -O slack.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb -O zoom.deb
+wget https://stable.dl2.discordapp.net/apps/linux/0.0.87/discord-0.0.87.deb -O discord.deb
+wget https://go.skype.com/skypeforlinux-64.deb -O skype.deb
 
 # Instalar pacotes .deb
 dpkg -i *.deb
 apt --fix-broken install -y
 
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.6_all.deb
-sudo dpkg -i ./protonvpn-stable-release_1.0.6_all.deb && sudo apt update
+dpkg -i ./protonvpn-stable-release_1.0.6_all.deb
+apt update -y
 echo "e5e03976d0980bafdf07da2f71b14fbc883c091e72b16772199742c98473002f protonvpn-stable-release_1.0.6_all.deb" | sha256sum --check -
 apt install -y proton-vpn-gnome-desktop
 
-curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
 apt-get -y update 
 apt-get -y install spotify-client
 
