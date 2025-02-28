@@ -6,8 +6,6 @@
 # E-mail: contato@sieca.net              #
 ##########################################
 
-
-
 # Atualizar base de dados e pacotes
 apt update -y
 apt upgrade -y
@@ -30,7 +28,22 @@ language-pack-gnome-pt language-pack-pt libavcodec-extra libjpeg-dev libnotify-b
 libreoffice-help-pt-br libreoffice-l10n-pt-br libreoffice-style-colibre libssl-dev numlockx p7zip-full \
 python3-dev python3-smbc rar sassc screen software-properties-common ubuntu-restricted-extras ukui-greeter \
 unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
-wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite
+wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
+openssh-server sequeler
+
+# Add the AnyDesk GPG key
+apt update
+apt install ca-certificates curl apt-transport-https
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
+chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
+
+# Add the AnyDesk apt repository
+echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
+
+# Update apt caches and install the AnyDesk client
+apt update
+apt install anydesk
 
 # Remover pacotes desnecessários
 apt remove --purge -y hexchat hypnotix orca rhythmbox warpinator
@@ -88,8 +101,6 @@ systemctl enable clamav-daemon
 systemctl restart clamav-daemon
 systemctl enable clamav-clamonacc.service
 systemctl restart clamav-clamonacc.service
-
-
 
 # Verificação final
 apt update -y
