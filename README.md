@@ -30,7 +30,7 @@ Contributions are welcome!  Feel free to submit pull requests with improvements,
 
 **License:**
 
-[Specify your license here, e.g., MIT License]
+MIT License
 
 
 ---
@@ -66,4 +66,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar solicitações 
 
 **Licença:**
 
-[Especifique sua licença aqui, e.g., Licença MIT]
+Licença MIT
