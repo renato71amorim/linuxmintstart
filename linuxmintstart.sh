@@ -29,11 +29,11 @@ libreoffice-help-pt-br libreoffice-l10n-pt-br libreoffice-style-colibre libssl-d
 python3-dev python3-smbc rar sassc screen software-properties-common ubuntu-restricted-extras ukui-greeter \
 unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
 wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
-openssh-server sequeler notify-osd libnotify-bin
+openssh-server sequeler notify-osd libnotify-bin screenfetch
 
 # Add the AnyDesk GPG key
-apt update
-apt install ca-certificates curl apt-transport-https
+apt update -y
+apt install -y ca-certificates curl apt-transport-https
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
 chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
@@ -42,8 +42,8 @@ chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
 echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
 
 # Update apt caches and install the AnyDesk client
-apt update
-apt install anydesk
+apt update -y
+apt install -y anydesk
 
 # Remover pacotes desnecessários
 apt remove --purge -y hexchat hypnotix orca rhythmbox warpinator
@@ -113,7 +113,7 @@ mkdir /exec/
 cp exec/*.* /exec/
 cd /exec/
 chmod +x *.sh
-sh add_task.sk
+#sh add_task.sk
 
 # Comunique a conclusão
 notify-send "Atualização do Sistema Concluída" "O sistema foi atualizado, dedique um tempo para ver as mensagens do terminal para verificar se ocorrer algum erro."
