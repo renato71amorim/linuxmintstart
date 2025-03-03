@@ -110,10 +110,11 @@ apt autoremove --purge -y
 
 # Crie pastas exec e copia arquivos
 mkdir /exec/
+cd -
 cp exec/*.* /exec/
 cd /exec/
 chmod +x *.sh
-#sh add_task.sk
+sh add_task.sk
 
 # Comunique a conclusão
 notify-send "Atualização do Sistema Concluída" "O sistema foi atualizado, dedique um tempo para ver as mensagens do terminal para verificar se ocorrer algum erro."
