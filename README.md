@@ -1,6 +1,3 @@
-# linuxmintstart
-Post-installation guide for Linux Mint. Curated commands &amp; instructions to optimize and personalize your system. Covers updates, user config, tweaks &amp; performance enhancements. For beginners &amp; experts. Contributions welcome!
-
 # Linux Mint Post-Installation Optimization
 
 This repository provides a curated collection of commands and instructions designed to enhance your Linux Mint experience after installation.  It's intended to help you optimize and personalize your system, covering essential post-installation tasks.
