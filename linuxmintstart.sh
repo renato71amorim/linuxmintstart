@@ -29,7 +29,7 @@ libreoffice-help-pt-br libreoffice-l10n-pt-br libreoffice-style-colibre libssl-d
 python3-dev python3-smbc rar sassc screen software-properties-common ubuntu-restricted-extras ukui-greeter \
 unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
 wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
-openssh-server sequeler notify-osd libnotify-bin screenfetch
+openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla
 
 # Add the AnyDesk GPG key
 apt update -y
@@ -60,7 +60,8 @@ wget https://vscode.download.prss.microsoft.com/dbazure/download/stable/e54c774e
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.25.0-amd64.deb -O slack.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb -O zoom.deb
 wget https://stable.dl2.discordapp.net/apps/linux/0.0.87/discord-0.0.87.deb -O discord.deb
-wget https://go.skype.com/skypeforlinux-64.deb -O skype.deb
+#wget https://go.skype.com/skypeforlinux-64.deb -O skype.deb
+#wget https://dl.strem.io/shell-linux/v4.4.168/stremio_4.4.168-1_amd64.deb -O stremio.deb
 
 # Instalar pacotes .deb
 dpkg -i *.deb
