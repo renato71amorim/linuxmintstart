@@ -29,7 +29,7 @@ libreoffice-help-pt-br libreoffice-l10n-pt-br libreoffice-style-colibre libssl-d
 python3-dev python3-smbc rar sassc screen software-properties-common ubuntu-restricted-extras ukui-greeter \
 unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
 wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
-openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim
+openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim python3.12-venv
 
 # Add the AnyDesk GPG key
 apt update -y
@@ -116,6 +116,11 @@ cp exec/*.* /exec/
 cd /exec/
 chmod +x *.sh
 sh add_task.sk
+
+#Python
+cd ~
+python3 -m venv Projetos/
+
 
 # Comunique a conclusão
 notify-send "Atualização do Sistema Concluída" "O sistema foi atualizado, dedique um tempo para ver as mensagens do terminal para verificar se ocorrer algum erro."
