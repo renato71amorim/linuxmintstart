@@ -29,7 +29,7 @@ libreoffice-help-pt-br libreoffice-l10n-pt-br libreoffice-style-colibre libssl-d
 python3-dev python3-smbc rar sassc screen software-properties-common ubuntu-restricted-extras ukui-greeter \
 unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
 wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
-openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim python3.12-venv mysql-client
+openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim python3.12-venv mysql-client php-cli
 
 # Add the AnyDesk GPG key
 apt update -y
