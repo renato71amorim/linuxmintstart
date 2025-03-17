@@ -14,13 +14,13 @@ apt install -y --fix-broken
 
 # Instalar pacotes de fontes Microsoft
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
-apt install -y ttf-mscorefonts-installer
+apt install -y --reinstall ttf-mscorefonts-installer
 
 # Atualizações
 mintupdate-cli upgrade -r -y
 
 # Instalar pacotes do repositório
-apt install -y \
+apt install -y  --reinstall \
 aspell-pt-br automake build-essential checkinstall clamav clamav-daemon clamtk curl firefox-locale-pt \
 fonts-ibm-plex fonts-liberation2 fonts-noto-cjk fonts-noto-core fonts-open-sans gcc git gparted gpg gthumb \
 gtk2-engines-murrine gtk2-engines-pixbuf htop hunspell-pt-br hyphen-pt-br ibrazilian inotify-tools \
@@ -34,7 +34,7 @@ dropbox remmina
 
 # Add the AnyDesk GPG key
 apt update -y
-apt install -y ca-certificates curl apt-transport-https
+apt install -y --reinstall  ca-certificates curl apt-transport-https
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
 chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
@@ -44,7 +44,7 @@ echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk
 
 # Update apt caches and install the AnyDesk client
 apt update -y
-apt install -y anydesk
+apt install -y --reinstall  anydesk
 
 # Remover pacotes desnecessários
 apt remove --purge -y hexchat hypnotix orca rhythmbox warpinator
