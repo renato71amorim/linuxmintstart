@@ -44,7 +44,7 @@ echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk
 
 # Update apt caches and install the AnyDesk client
 apt update -y
-apt install -y --reinstall  anydesk
+apt install -y --reinstall anydesk
 
 # Remover pacotes desnecessários
 apt remove --purge -y hexchat hypnotix orca rhythmbox warpinator
@@ -67,12 +67,19 @@ wget https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megasync-xUbuntu_24.04_amd64
 dpkg -i *.deb
 apt --fix-broken install -y
 
+# Telegram
+add-apt-repository ppa:atareao/telegram
+apt update
+apt install -y --reinstall telegram
+
+# ProtonVPN
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.6_all.deb
 dpkg -i ./protonvpn-stable-release_1.0.6_all.deb
 apt update -y
 echo "e5e03976d0980bafdf07da2f71b14fbc883c091e72b16772199742c98473002f protonvpn-stable-release_1.0.6_all.deb" | sha256sum --check -
 apt install -y proton-vpn-gnome-desktop
 
+# Spotfy
 curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
 apt-get -y update 
@@ -120,6 +127,8 @@ sh add_task.sk
 #Python
 cd ~
 python3 -m venv Projetos/
+echo "cd projetos/"
+echo "source bin/activate"
 
 
 # Comunique a conclusão
