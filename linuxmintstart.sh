@@ -56,9 +56,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -
 wget https://github.com/rustdesk/rustdesk/releases/download/1.3.7/rustdesk-1.3.7-x86_64.deb -O rustdesk.deb
 wget https://download3.ebz.epson.net/dsc/f/03/00/15/15/02/013830cf5726b235f78da4a365f8c990a98d277f/epson-inkjet-printer-202101w_1.0.2-1_amd64.deb -O epson-printer.deb
 wget https://dl.4kdownload.com/app/4kvideodownloader_4.20.0-1_amd64.deb?source=website -O 4kvideodownloader.deb
+wget https://dl.4kdownload.com/app/4kstogram_4.9.0-1_amd64.deb?source=website -O 4kstogram.deb
 wget https://clockify.me/downloads/Clockify_Setup_x64.deb -O clockify.deb
 wget https://vscode.download.prss.microsoft.com/dbazure/download/stable/e54c774e0add60467559eb0d1e229c6452cf8447/code_1.97.2-1739406807_amd64.deb -O vscode.deb
-wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.25.0-amd64.deb -O slack.deb
+wget https://downloads.slack-edge.com/desktop-releases/linux/x64/4.41.105/slack-desktop-4.41.105-amd64.deb -O slack.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb -O zoom.deb
 wget https://stable.dl2.discordapp.net/apps/linux/0.0.87/discord-0.0.87.deb -O discord.deb
 wget https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megasync-xUbuntu_24.04_amd64.deb -O mega.deb
