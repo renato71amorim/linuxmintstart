@@ -30,7 +30,7 @@ python3-dev python3-smbc rar sassc screen software-properties-common ubuntu-rest
 unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
 wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
 openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim python3.12-venv mysql-client php-cli php-curl \
-dropbox remmina
+dropbox remmina 
 
 # Add the AnyDesk GPG key
 apt update -y
@@ -63,6 +63,7 @@ wget https://downloads.slack-edge.com/desktop-releases/linux/x64/4.41.105/slack-
 wget https://zoom.us/client/latest/zoom_amd64.deb -O zoom.deb
 wget https://stable.dl2.discordapp.net/apps/linux/0.0.87/discord-0.0.87.deb -O discord.deb
 wget https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megasync-xUbuntu_24.04_amd64.deb -O mega.deb
+wget https://get.webpkiplugin.com/Downloads/2.13.3/setup-deb-64 -O webpkiplugin.deb
 
 # Instalar pacotes .deb
 dpkg -i *.deb
