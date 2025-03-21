@@ -6,6 +6,33 @@
 # E-mail: contato@sieca.net              #
 ##########################################
 
+clear
+
+# Verificando o UID do usuário que executou o script
+if [ "$UID" -eq 0 ]; then
+
+    # Rest of your script here...
+    echo "Script executed successfully with root privileges."
+
+fi
+    # Se for diferente de 0, imprime mensagem de erro.
+    echo "##########################################"
+    echo "#                                        #"
+    echo "# Requer privilégio de root              #"
+    echo "# Não use sh linuxmintstart.sh           #"
+    echo "#                                        #"
+    echo "# Faça assim:                            #"
+    echo "#                                        #"
+    echo "# chmod +x linuxmintstart.sh             #"
+    echo "#                                        #"
+    echo "#                                        #"
+    echo "# ./linuxmintstart.sh                    #"
+    echo "#                                        #"        
+    echo "##########################################"
+
+    # Finaliza o script
+    exit 1
+
 # Atualizar base de dados e pacotes
 apt update -y
 apt upgrade -y
