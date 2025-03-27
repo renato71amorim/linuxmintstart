@@ -72,6 +72,8 @@ if [ "$UID" -eq 0 ]; then
     wget https://stable.dl2.discordapp.net/apps/linux/0.0.87/discord-0.0.87.deb -O discord.deb
     wget https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megasync-xUbuntu_24.04_amd64.deb -O mega.deb
     wget https://get.webpkiplugin.com/Downloads/2.13.3/setup-deb-64 -O webpkiplugin.deb
+    wget https://app.raidrive.com/deb/pool/main/r/raidrive/raidrive_2024.9.27.6-linux_amd64.deb -O raidrive.deb
+
 
     # Instalar pacotes .deb
     dpkg -i *.deb
