@@ -8,6 +8,9 @@
 
 clear
 
+# Todos arquivos baixados para pasta temp
+cd /tmp/
+
 # Verificando o UID do usuário que executou o script
 if [ "$UID" -eq 0 ]; then
 
@@ -40,6 +43,47 @@ if [ "$UID" -eq 0 ]; then
     openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim python3.12-venv mysql-client php-cli php-curl \
     dropbox remmina 
 
+    # VirtualBox#
+    # Obtém a versão do VirtualBox e extrai apenas o número da versão
+    version=$(VBoxManage -v | awk -F'_' '{print $1}')
+
+    # Define a URL base do Extension Pack (substitua pelo link correto -  a URL precisa ser dinâmica!)
+    #Exemplo:  https://download.virtualbox.org/virtualbox/7.0.16/Oracle_VM_VirtualBox_Extension_Pack-7.0.16.vbox-extpack
+    url_base="https://download.virtualbox.org/virtualbox/${version}/Oracle_VM_VirtualBox_Extension_Pack-${version}.vbox-extpack"
+
+    # Verifica se a versão foi obtida com sucesso
+    if [ -z "$version" ]; then
+        echo "Erro: Não foi possível obter a versão do VirtualBox."
+        exit 1
+    fi
+
+    # Constrói a URL completa
+    url="$url_base"
+
+    # Baixa o Extension Pack
+    echo "Baixando o Extension Pack de $url..."
+    wget -q --show-progress "$url" -O extension_pack.vbox
+
+    # Verifica se o download foi bem sucedido
+    if [ $? -ne 0 ]; then
+    echo "Erro: Falha ao baixar o Extension Pack."
+    exit 1
+    fi
+
+    # Instala o Extension Pack
+    echo "Instalando o Extension Pack..."
+    VBoxManage extpack install extension_pack.vbox --replace
+
+    # Verifica se a instalação foi bem sucedida
+    if [ $? -ne 0 ]; then
+    echo "Erro: Falha ao instalar o Extension Pack."
+    exit 1
+    fi
+
+    echo "Instalação concluída com sucesso!"
+    exit 0
+
+
     # Add the AnyDesk GPG key
     apt update -y
     apt install -y --reinstall  ca-certificates curl apt-transport-https
@@ -59,7 +103,6 @@ if [ "$UID" -eq 0 ]; then
     apt autoremove --purge -y
 
     # Baixar pacotes .deb locais
-    cd /tmp/
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O google-chrome.deb
     wget https://github.com/rustdesk/rustdesk/releases/download/1.3.7/rustdesk-1.3.7-x86_64.deb -O rustdesk.deb
     wget https://download3.ebz.epson.net/dsc/f/03/00/15/15/02/013830cf5726b235f78da4a365f8c990a98d277f/epson-inkjet-printer-202101w_1.0.2-1_amd64.deb -O epson-printer.deb
