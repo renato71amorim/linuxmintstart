@@ -117,6 +117,7 @@ if [ "$UID" -eq 0 ]; then
     wget https://get.webpkiplugin.com/Downloads/2.13.3/setup-deb-64 -O webpkiplugin.deb
     wget https://app.raidrive.com/deb/pool/main/r/raidrive/raidrive_2024.9.27.6-linux_amd64.deb -O raidrive.deb
     wget https://downloads.vivaldi.com/stable/vivaldi-stable_7.3.3635.4-1_amd64.deb -O vivaldi.deb
+    wget https://download.nomachine.com/download/8.16/Linux/nomachine_8.16.1_1_amd64.deb -O nomachine.deb
 
 
     # Instalar pacotes .deb
