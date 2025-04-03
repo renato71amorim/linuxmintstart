@@ -179,7 +179,7 @@ if [ "$UID" -eq 0 ]; then
     cp exec/*.* /exec/
     cd /exec/
     chmod +x *.sh
-    sh add_task.sk
+    sh add_task.sh
 
     #Python
     cd ~
