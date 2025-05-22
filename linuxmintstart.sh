@@ -41,7 +41,7 @@ if [ "$UID" -eq 0 ]; then
     unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
     wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
     openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim python3.12-venv mysql-client php-cli php-curl \
-    dropbox remmina 
+    dropbox remmina composer php-xml php-gd sigil
 
     # VirtualBox#
     # Obtém a versão do VirtualBox e extrai apenas o número da versão
