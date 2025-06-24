@@ -62,7 +62,7 @@ if [ "$UID" -eq 0 ]; then
 
     # Baixa o Extension Pack
     echo "Baixando o Extension Pack de $url..."
-    wget -q --show-progress "$url" -O extension_pack.vbox
+    wget -q --show-progress "$url" -O extension_pack.vbox-extpack
 
     # Verifica se o download foi bem sucedido
     if [ $? -ne 0 ]; then
@@ -72,7 +72,7 @@ if [ "$UID" -eq 0 ]; then
 
     # Instala o Extension Pack
     echo "Instalando o Extension Pack..."
-    VBoxManage extpack install extension_pack.vbox --replace
+    VBoxManage extpack install extension_pack.vbox-extpack --replace
 
     # Verifica se a instalação foi bem sucedida
     if [ $? -ne 0 ]; then
