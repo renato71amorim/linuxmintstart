@@ -45,43 +45,43 @@ if [ "$UID" -eq 0 ]; then
 
     # VirtualBox#
     # Obtém a versão do VirtualBox e extrai apenas o número da versão
-    version=$(VBoxManage -v | awk -F'_' '{print $1}')
+    # version=$(VBoxManage -v | awk -F'_' '{print $1}')
 
     # Define a URL base do Extension Pack (substitua pelo link correto -  a URL precisa ser dinâmica!)
-    #Exemplo:  https://download.virtualbox.org/virtualbox/7.0.16/Oracle_VM_VirtualBox_Extension_Pack-7.0.16.vbox-extpack
-    url_base="https://download.virtualbox.org/virtualbox/${version}/Oracle_VM_VirtualBox_Extension_Pack-${version}.vbox-extpack"
+    # Exemplo:  https://download.virtualbox.org/virtualbox/7.0.16/Oracle_VM_VirtualBox_Extension_Pack-7.0.16.vbox-extpack
+    # url_base="https://download.virtualbox.org/virtualbox/${version}/Oracle_VM_VirtualBox_Extension_Pack-${version}.vbox-extpack"
 
     # Verifica se a versão foi obtida com sucesso
-    if [ -z "$version" ]; then
-        echo "Erro: Não foi possível obter a versão do VirtualBox."
-        exit 1
-    fi
+    # if [ -z "$version" ]; then
+    #     echo "Erro: Não foi possível obter a versão do VirtualBox."
+    #     exit 1
+    # fi
 
     # Constrói a URL completa
-    url="$url_base"
+    # url="$url_base"
 
     # Baixa o Extension Pack
-    echo "Baixando o Extension Pack de $url..."
-    wget -q --show-progress "$url" -O extension_pack.vbox-extpack
+    # echo "Baixando o Extension Pack de $url..."
+    # wget -q --show-progress "$url" -O extension_pack.vbox-extpack
 
     # Verifica se o download foi bem sucedido
-    if [ $? -ne 0 ]; then
-    echo "Erro: Falha ao baixar o Extension Pack."
-    exit 1
-    fi
+    # if [ $? -ne 0 ]; then
+    # echo "Erro: Falha ao baixar o Extension Pack."
+    # exit 1
+    # fi
 
     # Instala o Extension Pack
-    echo "Instalando o Extension Pack..."
-    VBoxManage extpack install extension_pack.vbox-extpack --replace
+    # echo "Instalando o Extension Pack..."
+    # VBoxManage extpack install extension_pack.vbox-extpack --replace
 
     # Verifica se a instalação foi bem sucedida
-    if [ $? -ne 0 ]; then
-    echo "Erro: Falha ao instalar o Extension Pack."
-    exit 1
-    fi
+    # if [ $? -ne 0 ]; then
+    # echo "Erro: Falha ao instalar o Extension Pack."
+    # exit 1
+    # fi
 
-    echo "Instalação concluída com sucesso!"
-    exit 0
+    # echo "Instalação concluída com sucesso!"
+    # exit 0
 
 
     # Add the AnyDesk GPG key
@@ -113,7 +113,7 @@ if [ "$UID" -eq 0 ]; then
     wget https://downloads.slack-edge.com/desktop-releases/linux/x64/4.41.105/slack-desktop-4.41.105-amd64.deb -O slack.deb
     wget https://zoom.us/client/latest/zoom_amd64.deb -O zoom.deb
     wget https://stable.dl2.discordapp.net/apps/linux/0.0.87/discord-0.0.87.deb -O discord.deb
-    wget https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megasync-xUbuntu_24.04_amd64.deb -O mega.deb
+    # wget https://mega.nz/linux/repo/xUbuntu_24.04/amd64/megasync-xUbuntu_24.04_amd64.deb -O mega.deb
     wget https://get.webpkiplugin.com/Downloads/2.13.3/setup-deb-64 -O webpkiplugin.deb
     wget https://app.raidrive.com/deb/pool/main/r/raidrive/raidrive_2024.9.27.6-linux_amd64.deb -O raidrive.deb
     wget https://downloads.vivaldi.com/stable/vivaldi-stable_7.3.3635.4-1_amd64.deb -O vivaldi.deb
@@ -174,17 +174,17 @@ if [ "$UID" -eq 0 ]; then
     apt autoremove --purge -y
 
     # Crie pastas exec e copia arquivos
-    mkdir /exec/
-    cd -
-    cp exec/*.* /exec/
-    cd /exec/
-    chmod +x *.sh
-    sh add_task.sh
+    # mkdir /exec/
+    # cd -
+    # cp exec/*.* /exec/
+    # cd /exec/
+    # chmod +x *.sh
+    # sh add_task.sh
 
     #Python
     cd ~
     python3 -m venv Projetos/
-    echo "cd projetos/"
+    echo "cd Projetos/"
     echo "source bin/activate"
 
 
