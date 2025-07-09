@@ -167,12 +167,6 @@ if [ "$UID" -eq 0 ]; then
     systemctl enable clamav-clamonacc.service
     systemctl restart clamav-clamonacc.service
 
-    # Verificação final
-    apt update -y
-    apt upgrade -y
-    apt install -y --fix-broken
-    apt autoremove --purge -y
-
     # Crie pastas exec e copia arquivos
     # mkdir /exec/
     # cd -
@@ -187,6 +181,17 @@ if [ "$UID" -eq 0 ]; then
     echo "cd Projetos/"
     echo "source bin/activate"
 
+
+    # Homebank
+    add-apt-repository ppa:mdoyen/homebank
+    apt update
+    apt install homebank
+
+    # Verificação final
+    apt update -y
+    apt upgrade -y
+    apt install -y --fix-broken
+    apt autoremove --purge -y
 
     # Comunique a conclusão
     notify-send "Atualização do Sistema Concluída" "O sistema foi atualizado, dedique um tempo para ver as mensagens do terminal para verificar se ocorrer algum erro."
