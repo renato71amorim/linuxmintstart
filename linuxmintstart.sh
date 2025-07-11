@@ -41,48 +41,26 @@ if [ "$UID" -eq 0 ]; then
     unar unrar unzip v4l2loopback-utils virtualbox virtualbox-dkms virtualbox-qt vlc vlc-data wbrazilian wget \
     wmctrl wportuguese zip zlib1g-dev zstd breeze-cursor-theme breeze-icon-theme meld nmap remmina twinkle parcellite \
     openssh-server sequeler notify-osd libnotify-bin screenfetch filezilla vim python3.12-venv mysql-client php-cli php-curl \
-    dropbox remmina composer php-xml php-gd sigil
+    dropbox remmina composer php-xml php-gd sigil gimp inkscape
 
     # VirtualBox#
     # Obtém a versão do VirtualBox e extrai apenas o número da versão
-    # version=$(VBoxManage -v | awk -F'_' '{print $1}')
+    version=$(VBoxManage -v | awk -F'_' '{print $1}')
 
     # Define a URL base do Extension Pack (substitua pelo link correto -  a URL precisa ser dinâmica!)
     # Exemplo:  https://download.virtualbox.org/virtualbox/7.0.16/Oracle_VM_VirtualBox_Extension_Pack-7.0.16.vbox-extpack
-    # url_base="https://download.virtualbox.org/virtualbox/${version}/Oracle_VM_VirtualBox_Extension_Pack-${version}.vbox-extpack"
-
-    # Verifica se a versão foi obtida com sucesso
-    # if [ -z "$version" ]; then
-    #     echo "Erro: Não foi possível obter a versão do VirtualBox."
-    #     exit 1
-    # fi
+    url_base="https://download.virtualbox.org/virtualbox/${version}/Oracle_VM_VirtualBox_Extension_Pack-${version}.vbox-extpack"
 
     # Constrói a URL completa
-    # url="$url_base"
+    url="$url_base"
 
     # Baixa o Extension Pack
     # echo "Baixando o Extension Pack de $url..."
-    # wget -q --show-progress "$url" -O extension_pack.vbox-extpack
-
-    # Verifica se o download foi bem sucedido
-    # if [ $? -ne 0 ]; then
-    # echo "Erro: Falha ao baixar o Extension Pack."
-    # exit 1
-    # fi
+    wget -q --show-progress "$url" -O extension_pack.vbox-extpack
 
     # Instala o Extension Pack
     # echo "Instalando o Extension Pack..."
-    # VBoxManage extpack install extension_pack.vbox-extpack --replace
-
-    # Verifica se a instalação foi bem sucedida
-    # if [ $? -ne 0 ]; then
-    # echo "Erro: Falha ao instalar o Extension Pack."
-    # exit 1
-    # fi
-
-    # echo "Instalação concluída com sucesso!"
-    # exit 0
-
+    VBoxManage extpack install extension_pack.vbox-extpack --replace
 
     # Add the AnyDesk GPG key
     apt update -y
