@@ -1,12 +1,26 @@
 #!/usr/bin/env bash
 
-##########################################
-# Script de Pós-instalação do Linux Mint #
-# Autor: Renato Amorim - SIECA           #
-# E-mail: contato@sieca.net              #
-##########################################
 
 clear
+
+echo "####################################################################"
+echo "# Eu quero ter certeza de que você leu e entendeu o que é          #"
+echo "# preciso fazer para usar este sistema. Por isso, coloque          #"
+echo "# abaixo desta mensagem o comando 'exit 0', que você deverá        #"
+echo "# comentar para que a aplicação seja executada.                    #"
+echo "#                                                                  #"
+echo "# Sugiro que antes de fazer isto, dê uma olhada no que será        #"
+echo "# *removido* e *instalado*.                                        #"
+echo "#                                                                  #"
+echo "# Faça bom proveito. Dúvidas ou sugestões, estamos à disposição.   #"
+echo "####################################################################"
+echo "# Script de Pós-instalação do Linux Mint                           #"
+echo "# Autor: Renato Amorim - SIECA                                     #"
+echo "# E-mail: contato@sieca.net                                        #"
+echo "####################################################################"
+
+# Comente a linha abaixo
+exit 0
 
 # Todos arquivos baixados para pasta temp
 cd /tmp/
